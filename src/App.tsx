@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PetStoreFunctional from './components/PetStoreFunctional';
+import PetStoreClass from './components/PetStoreClass';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <React.Fragment>
+    <h1>Class Component</h1>
+    <h2>Without quantity prop</h2>
+    <PetStoreClass animal="cats" />
+    <h2>With quantity prop</h2>
+    <PetStoreClass animal="cats" quantity={10} />
+    <h1>Functional Component</h1>
+    <h2>Without quantity prop</h2>
+    <PetStoreFunctional animal="dogs" />
+    <h2>With quantity prop</h2>
+    <PetStoreFunctional animal="dogs" quantity={5} />
+  </React.Fragment>
+);
 
 export default App;
